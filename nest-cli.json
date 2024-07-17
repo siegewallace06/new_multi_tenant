@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/new_multi_tenant/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/new_multi_tenant/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/new_multi_tenant",
+  "projects": {
+    "new_multi_tenant": {
+      "type": "application",
+      "root": "apps/new_multi_tenant",
+      "entryFile": "main",
+      "sourceRoot": "apps/new_multi_tenant/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/new_multi_tenant/tsconfig.app.json"
+      }
+    },
+    "user-service": {
+      "type": "application",
+      "root": "apps/user-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/user-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/user-service/tsconfig.app.json"
+      }
+    },
+    "notification": {
+      "type": "application",
+      "root": "apps/notification",
+      "entryFile": "main",
+      "sourceRoot": "apps/notification/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/notification/tsconfig.app.json"
+      }
+    }
+  }
+}
